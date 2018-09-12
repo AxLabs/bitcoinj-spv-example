@@ -9,6 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
+import java.time.temporal.TemporalAccessor;
 import java.util.Date;
 
 @Component
@@ -29,6 +32,7 @@ public class BitcoinMonitor {
 
     @PostConstruct
     protected void start() {
+        //bitcoinPeerGroup.setFastCatchupTimeSecs(Instant.now().minus(30, ChronoUnit.DAYS).getEpochSecond());
         bitcoinPeerGroup.start();
 
         final DownloadProgressTracker downloadListener = new DownloadProgressTracker() {

@@ -530,3 +530,5 @@ ASALocalRun/
 
 
 # End of https://www.gitignore.io/api/java,eclipse,intellij+all,visualstudio,visualstudiocode,gradle
+
+.java-version
