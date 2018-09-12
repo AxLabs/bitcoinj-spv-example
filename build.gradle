@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.0.0.RELEASE' apply true
+    id 'io.spring.dependency-management' version '1.0.4.RELEASE' apply true
+}
+
+group 'com.axlabs'
+archivesBaseName = 'bitcoinj-svp-example'
+version '1.0.0'
+
+bootJar {
+    launchScript()
+    baseName += "-exec"
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+jar.enabled = true
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.bitcoinj:bitcoinj-core:0.14.7'
+}
